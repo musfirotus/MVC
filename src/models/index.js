@@ -20,8 +20,11 @@ db.sequelize = sequelize;
 
 // author models
 db.authors = require('./author.model.js')(sequelize, Sequelize);
+
 // post models
+db.posts = require('./post.model.js')(sequelize, Sequelize);
 
 // comment models
+db.comments = require('./comment.model.js')(sequelize, Sequelize);
 
 module.exports = db;

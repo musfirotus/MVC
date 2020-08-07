@@ -30,8 +30,10 @@ app.get('/', (req, res) => {
 require('./src/routes/author.routes')(app);
 
 // post routes
+require('./src/routes/post.routes')(app);
 
 // comment routes
+require('./src/routes/comment.routes')(app);
 
 const PORT = process.env.PORT || 8080;
 
