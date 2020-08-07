@@ -2,13 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const db = require('./src/models');
-
 const app = express();
-
 let whiteList = [
     'http://localhost:8081'
 ];
-
 let corsOption = {
     origin: function(origin, callback) {
         if (whiteList.indexOf(origin !== -1 || !origin)) {
@@ -28,6 +25,9 @@ db.sequelize.sync();
 app.get('/', (req, res) => {
     res.json({ message: 'Welcome to MySql'});
 });
+
+// author routes
+require('./src/routes/author.routes')(app);
 
 const PORT = process.env.PORT || 8080;
 
