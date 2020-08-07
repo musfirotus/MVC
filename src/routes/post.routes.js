@@ -1,9 +1,9 @@
 module.exports = app => {
-    const authors = require('../controllers/author.controller.js');
+    const posts = require('../controllers/post.controller.js');
     let router = require('express').Router();
 
-    // Create a new author
-    router.post('/', authors.create);
+    // Create a new post
+    router.post('/', posts.create);
     
-    app.use('/author', router);
+    app.use('/post', router);
 }

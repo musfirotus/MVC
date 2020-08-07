@@ -19,7 +19,7 @@ class CommentController {
 
         Comment.create(comment)
             .then((data) => {
-                res.send(data);
+                res.json({"data": data});
             }).catch((err) => {
                 res.status(500).send({
                     message:
