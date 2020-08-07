@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const db = require('./src/models');
 
 const app = express();
 
@@ -21,6 +22,8 @@ let corsOption = {
 app.use(cors(corsOption));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+db.sequelize.sync();
 
 app.get('/', (req, res) => {
     res.json({ message: 'Welcome to MySql'});
