@@ -29,6 +29,10 @@ app.get('/', (req, res) => {
 // author routes
 require('./src/routes/author.routes')(app);
 
+// post routes
+
+// comment routes
+
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {

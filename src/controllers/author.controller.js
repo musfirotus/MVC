@@ -3,6 +3,8 @@ const Author = db.authors;
 const Op = db.Sequelize.Op;
 
 class AuthorController {
+
+    // Create new author
     static async create(req, res) {
         const author = {
             username: req.body.username,

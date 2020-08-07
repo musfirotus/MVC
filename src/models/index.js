@@ -18,6 +18,10 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
+// author models
 db.authors = require('./author.model.js')(sequelize, Sequelize);
+// post models
+
+// comment models
 
 module.exports = db;
